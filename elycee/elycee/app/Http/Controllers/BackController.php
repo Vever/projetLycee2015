@@ -18,7 +18,17 @@ class BackController extends Controller {
 	|
 	*/
 
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
+	
 	/**
 	 * Show the application dashboard to the user.
 	 *
@@ -30,9 +40,10 @@ class BackController extends Controller {
 		$posts 	= \App\Post::paginate(3);
 
 		$users 	= \App\User::all();
-		$users 	= \App\User
-		::paginate(3);
-		return view('back.index', compact('posts','users'));
+		$users 	= \App\User::paginate(3);
+
+		$user 	= \Auth::user();
+		return view('back.index', compact('posts','users', 'user'));
 	}
 
 	/**
@@ -44,6 +55,17 @@ class BackController extends Controller {
 	{
 		$posts = \App\Post::all();
 		return view('back.all', compact('posts'));
+	}
+
+	/**
+	 * Show the application dashboard to the user.
+	 *
+	 * @return Response
+	 */
+	public function showAllStudents()
+	{
+		$users = \App\User::all();
+		return view('back.allStudent', compact('users'));
 	}
 
 	/**

@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>Hello Admin<a href="{{url('logout')}}">se déconnecter</a></li>
+            <li>Hello {{$user->name}}<a href="{{url('auth/logout')}}">se déconnecter</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
@@ -48,7 +48,7 @@
             <li><a href="{{url('home')}}">Dashboard <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Fiches</a></li>
             <li><a href="{{url('posts')}}">Articles</a></li>
-            <li><a href="#">Elèves</a></li>
+            <li><a href="{{url('students')}}">Elèves</a></li>
           </ul>
         </div>
         

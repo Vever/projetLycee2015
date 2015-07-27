@@ -1,4 +1,4 @@
-@extends('back.index')
+@extends('layouts.index')
 
 @section('content')
 <div class="container-fluid">
