@@ -1,0 +1,15 @@
+.publish, .unpublish{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+}
+.publish{
+	background-color: green;
+}
+.unpublish{
+	background-color: red;
+}
+.gestions_dashboard{
+	margin: 1% 0;
+	padding: 1%;
+}
