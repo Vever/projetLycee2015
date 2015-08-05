@@ -10,7 +10,7 @@
 {!! Form::open(['url' => 'update/'.$post->id, 'method'=>'PUT','files' => true]) !!} 
   <div class="form-group">
       {!! Form::label('title', 'Titre de l\'article:') !!}
-      {!! Form::text('title', $post->title, null, ['class' => 'form-control', 'required']) !!}
+      {!! Form::text('title', $post->title, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('abstract', 'Extrait de l\'article:') !!}

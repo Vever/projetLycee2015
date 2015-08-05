@@ -2,15 +2,12 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model {
+class Question extends Model {
 
 	protected $fillable = [
-		'title',
-		'abstract',
-		'content',
-		'url_thumbnail',
-		'user_id',
-		'status',
+        'content',
+		'fiche_id',
+        'reponse'
 	];
 
 	/**
@@ -18,8 +15,8 @@ class Post extends Model {
     *
     * @return \Illuminate\Database\Relation\BelongsTo
     */
-	public function user_id(){
-		return $this->belongsTo('App\User');
+	public function fiche(){
+		return $this->belongsTo('App\Fiche');
 	}
 
 }

@@ -13,3 +13,16 @@
 	margin: 1% 0;
 	padding: 1%;
 }
+.gestions_dashboard h4{
+	cursor: pointer;
+}
+.gestions_dashboard ul{
+	display: none;
+}
+ul{
+	padding-left: 0;
+}
+ul li{
+	padding-left: 20px;
+	list-style:none; 
+}

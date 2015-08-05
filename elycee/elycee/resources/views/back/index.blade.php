@@ -8,15 +8,20 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
 		<div id="gestionFiches" class="gestions_dashboard">
 			<h4>Gestions des fiches<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></h4>
-			@foreach ($posts as $post)
-			<!-- <div class="col-xs-6 col-lg-4">
-				<h2><a href="{{url('single/'.$post->id)}}" title="{{$post->title}}" style="font-size:80%;">{{$post->title}}</a></h2>
-				<p>{{$post->status}}</p>
-			</div> --><!--/.col-xs-6.col-lg-4-->
-			@endforeach
+			<ul>Les dernieres fiches:
+				@foreach ($fiches as $fiche)
+				<li><a href="{{url('fiche/'.$fiche->id)}}" title="{{$fiche->title}}" style="font-size:80%;">{{$fiche->title}}</a>
+				@if ($fiche->status == "publish")
+					<div class="publish"></div>
+				@else
+					<div class="unpublish"></div>
+				@endif
+				</li>
+				@endforeach
+			</ul>
 		</div>	
 
-		<div id="gestionArticles" class="gestions_dashboard">
+		<div id="gestionArticles" class="gestions_dashboard" >
 			<h4>Gestions des articles<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></h4>
 			<ul>Les derniers articles:
 				@foreach ($posts as $post)
@@ -29,8 +34,8 @@
 					@endif
 				</li><!--/.col-xs-6.col-lg-4-->
 				@endforeach
+				<a href="{{url('posts')}}">Voir tous les articles.</a>
 			</ul>
-			<a href="{{url('posts')}}">Voir tous les articles.</a>
 		</div>
 
 		<div id="gestionEleves" class="gestions_dashboard">

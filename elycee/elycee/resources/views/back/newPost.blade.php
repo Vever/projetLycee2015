@@ -25,6 +25,10 @@
       {!! Form::label('url_thumbnail', 'Image de l\'article:') !!}
       {!! Form::file('url_thumbnail', null)!!}
     </div>
+    <div class="form-group" style="display:none;">
+      {!! Form::label('user_id', 'User_id:') !!}
+      {!! Form::text('user_id', $user->id)!!}
+    </div>
     <div class="form-group">
       {!! Form::label('status', 'Statut de l\'article:') !!}
       {!! Form::select('status', [1 => 'publish', 2 => 'unpublish']) !!}

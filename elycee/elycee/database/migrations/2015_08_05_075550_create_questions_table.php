@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChoicesTable extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateChoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('choices', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('question_id');
+            $table->integer('fiche_id');
             $table->text('content');
-            $table->enum('status', ['yes', 'no']);
+            $table->enum('reponse', ['vrai', 'faux']);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateChoicesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('choices');
+        Schema::drop('questions');
     }
 }

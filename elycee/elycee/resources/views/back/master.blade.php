@@ -46,7 +46,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="{{url('home')}}">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Fiches</a></li>
+            <li><a href="{{url('fiches')}}">Fiches</a></li>
             <li><a href="{{url('posts')}}">Articles</a></li>
             <li><a href="{{url('students')}}">Elèves</a></li>
           </ul>
@@ -73,10 +73,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{url('assets/js/script_back.js')}}"></script>
+    <script src="{{url('js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/back.js')}}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{url('assets/js/ie10-viewport-bug-workaround.js')}}"></script>
+    <script src="{{url('js/ie10-viewport-bug-workaround.js')}}"></script>
 
     <script src="offcanvas.js"></script>
   </body>

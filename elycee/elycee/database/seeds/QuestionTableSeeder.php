@@ -14,24 +14,24 @@ class QuestionTableSeeder extends Seeder
         DB::table('questions')->insert(
             [
                 [
-                    'title'         => 'php name',
-                    'content'       => 'Que signifient les lettres PHP.',
-                    'class_level'   => 'final_class',
+                    'fiche_id'      => 1,
+                    'content'       => '100 000 000 < 99 999 999',
+                    'reponse'       => 'faux'
                 ],
                 [
-                    'title'         => 'javascript',
-                    'content'       => 'Pour déclarer le début du code JavaScript, j\'écris la ligne suivante :',
-                    'class_level'   => 'first_class',
+                    'fiche_id'      => 1,
+                    'content'       => '2x2 = 2+2',
+                    'reponse'       => 'vrai'
                 ],
                 [
-                    'title'         => 'IDE',
-                    'content'       => 'Qu\'est ce qu\'un \'IDE\' ?',
-                    'class_level'   => 'final_class',
+                    'fiche_id'      => 1,
+                    'content'       => 'Un triangle a 4 côtés?',
+                    'reponse'       => 'faux'
                 ],
                 [
-                    'title'         => 'Html, paragraphe',
-                    'content'       => 'Quelles balises permettent d\'ouvrir un paragraphe ?',
-                    'class_level'   => 'first_class',
+                    'fiche_id'      => 1,
+                    'content'       => '3+3+3+3+3+3+3x2 = 24',
+                    'reponse'       => 'vrai'
                 ]
             ]
         );

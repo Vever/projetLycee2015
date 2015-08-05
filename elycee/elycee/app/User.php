@@ -1,6 +1,4 @@
-<?php
-
-namespace App;
+<?php namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -32,4 +30,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+    
+    /**
+     * Retreives all of the posts assoicated with the user.
+     * 
+     * @return \Illuminate\Database\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+    /**
+     * Retreives all of the posts assoicated with the user.
+     * 
+     * @return \Illuminate\Database\Relations\HasMany
+     */
+    public function fiches()
+    {
+        return $this->hasMany('App\Fiche');
+    }
 }

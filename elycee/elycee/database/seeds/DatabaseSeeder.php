@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UserTableSeeder');
         $this->call('PostTableSeeder');
         $this->call('QuestionTableSeeder');
-        $this->call('ChoiceTableSeeder');
+        $this->call('FicheTableSeeder');
 
         Model::reguard();
     }
