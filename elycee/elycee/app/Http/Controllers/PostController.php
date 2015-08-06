@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon; 
 use Request;
 use Session;
+use DB;
 
 class PostController extends Controller {
 
@@ -36,8 +37,10 @@ class PostController extends Controller {
 	 */
 	public function showAllPosts()
 	{
-		$posts 		= \App\Post::all();
-		$user 		= \Auth::user();
+		$posts = DB::table('posts')
+                ->orderBy('id', 'desc')
+                ->get();
+		$user 	= \Auth::user();
 
 		return view('back.all', compact('posts','user'));
 	}
@@ -113,11 +116,11 @@ class PostController extends Controller {
 
 			$post->update($request->all());
 
-			$imageName = $post->id . '.' . $request->file('url_thumbnail')->getClientOriginalExtension();
+			// $imageName = $post->id . '.' . $request->file('url_thumbnail')->getClientOriginalExtension();
 
-	    	$request->file('url_thumbnail')->move(
-	    	    base_path() . '/public/images/', $imageName
-	   		 );
+	  //   	$request->file('url_thumbnail')->move(
+	  //   	    base_path() . '/public/images/', $imageName
+	  //  		 );
 
 			return redirect()->to('posts')->with('message', 'ok');
 		}

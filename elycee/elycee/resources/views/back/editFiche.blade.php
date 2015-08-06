@@ -1,4 +1,9 @@
 @extends('back.master')
+
+@section('username')
+<li>Hello {{$user->name}}<a href="{{url('auth/logout')}}">se déconnecter</a></li>
+@endsection
+
 @section('title')
 <title>Modifier une Fiche QCM</title>
 @endsection

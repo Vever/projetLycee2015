@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>Hello {{$user->name}}<a href="{{url('auth/logout')}}">se déconnecter</a></li>
+           @yield('username')
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->

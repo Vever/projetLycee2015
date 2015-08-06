@@ -13,8 +13,17 @@
 
 // FRONT
 	Route::get('/', 'FrontController@index');
+	Route::get('/singlePost/{id}', 'FrontController@showSingle');
+	Route::get('/mentionsLegales', 'FrontController@mentions');
+	Route::get('/actualites', 'FrontController@actu');
 
-// BACKOFFICE
+//BACKSTUDENT
+	Route::get('/home', 'BackController@index');
+	Route::get('/fiche/{id}', 'FicheController@showSingleFiche');
+	Route::post('scoreCalcul', 'FicheController@scoreCalcul');
+	
+
+//BACKTEACHER
 	Route::controllers([
 		'auth' => 'Auth\AuthController',
 		'password' => 'Auth\PasswordController',

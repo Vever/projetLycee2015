@@ -3,6 +3,12 @@
 @section('headExtra')
     <!-- Bootstrap core CSS -->
     <link href="{{url('css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <style type="text/css">
+		footer{
+			position: fixed;
+		}
+	</style>
 @endsection
 
 @section('content')

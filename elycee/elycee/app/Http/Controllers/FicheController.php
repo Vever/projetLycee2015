@@ -52,8 +52,14 @@ class FicheController extends Controller {
 		$fiche 		= 	\App\Fiche::find($id);
 		$user 		= 	\Auth::user();
 		$questions 	=	\App\Fiche::find($id)->question;
+		Session::put('fiche_id_2', $id);
+		
 
-		return view('back.fiche', compact('fiche','user','questions'));
+		if ($user->role == "teacher") {
+			return view('back.fiche', compact('fiche','user','questions'));
+		}else{
+			return view('backStudent.fiche', compact('fiche','user','questions'));
+		}
 	}
 
 	// CRUD Fiches -------------------------------------------------------------------->
@@ -126,6 +132,34 @@ class FicheController extends Controller {
 		$fiche = \App\Fiche::find($id);
 		$fiche->delete();
 		return redirect('fiches');
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function scoreCalcul()
+	{	
+		$user 			= 	\Auth::user();
+		$fiche_id_2 	=   Session::get('fiche_id_2');
+		$input 			= 	Request::all();
+		$questions 		=	\App\Fiche::find($fiche_id_2)->question;
+		$score			= 	0;
+		$lol			= 	array_shift($input);
+		$input 			= 	array_values($input);
+		$reponse 		=   [];
+		
+		foreach ($questions as $question) {
+			array_push($reponse, $question->reponse);
+		}
+
+		$test 		= array_intersect_assoc($input, $reponse);
+		$test 		= count($test);
+		$reponse 	= count($reponse);
+
+
+		return view('backStudent.resultat', compact('reponse','test','fiche_id_2','user','questions'));
 	}
 
 

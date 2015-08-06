@@ -1,5 +1,9 @@
 @extends('back.master')
 
+@section('username')
+<li>Hello {{$user->name}}<a href="{{url('auth/logout')}}">se déconnecter</a></li>
+@endsection
+
 @section('content')
 	<div class="col-xs-6 col-lg-4 col-md-offset-2 ">
 		<h1>Fiche: <a href="#" title="{{$fiche->title}}">{{$fiche->title}}</a></h1>

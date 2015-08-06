@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use DB;
+
 class FrontController extends Controller {
 
 	/*
@@ -20,30 +22,49 @@ class FrontController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = \App\Post::all();
+		$posts = DB::table('posts')
+                ->orderBy('id', 'desc')
+                ->get();
 		return view('home', compact('posts'));
 	}
 
 
 	/**
-	 * Show the application category screen to the user.
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function showSingle($id)
+	{
+		$post 	= \App\Post::find($id);
+		$posts = DB::table('posts')
+                ->orderBy('id', 'desc')
+                ->get();
+		return view('singlePostFront', compact('post','posts'));
+	}
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function mentions()
+	{
+		return view('mentions');
+	}
+	/**
+	 * Show the application index screen to the user.
 	 *
 	 * @return Response
 	 */
-	public function showCategory($id)
-	{	
-		$categories = \App\Category::all();
-		$category = \App\Category::find($id);
-		return view('category', compact('category','categories'));
+	public function actu()
+	{
+		$posts = DB::table('posts')
+                ->orderBy('id', 'desc')
+                ->get();
+		return view('actu', compact('posts'));
 	}
 
-	public function contact()
-	{
-		return view('contact');
-	}
-	
-	public function friends()
-	{
-		return view('friends');
-	}
 }

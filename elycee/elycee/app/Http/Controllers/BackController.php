@@ -37,6 +37,7 @@ class BackController extends Controller {
 	 */
 	public function index()
 	{
+		$user 		= \Auth::user();
 		$posts 		= \App\Post::all();
 		$posts 		= \App\Post::paginate(3);
 
@@ -44,10 +45,18 @@ class BackController extends Controller {
 		$users 		= \App\User::paginate(3);
 
 		$fiches 	= \App\Fiche::all();
-		$fiches 	= \App\Fiche::paginate(3);
+		
+		if ($user->role == "teacher") {
+			$fiches 	= \App\Fiche::paginate(3);
+		}	
+		
 
-		$user 		= \Auth::user();
-		return view('back.index', compact('posts','users','fiches','user'));
+		if ($user->role == "teacher") {
+			return view('back.index', compact('posts','users','fiches','user'));
+		}else{
+			return view('backStudent.index', compact('fiches','user'));
+		}
+		
 	}
 
 
@@ -60,7 +69,12 @@ class BackController extends Controller {
 	{
 		$users 	= \App\User::all();
 		$user 	= \Auth::user();
-		return view('back.allStudents', compact('users','user'));
+
+		if ($user->role == "teacher") {
+			return view('back.allStudents', compact('users','user'));
+		}else{
+			return view('backStudent.noAccess', compact('user'));
+		}
 	}
 
 

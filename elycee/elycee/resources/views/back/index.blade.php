@@ -4,6 +4,10 @@
 <title>Back Office - Home</title>
 @endsection
 
+@section('username')
+<li>Hello {{$user->name}}<a href="{{url('auth/logout')}}">se déconnecter</a></li>
+@endsection
+
 @section('content')
 	<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
 		<div id="gestionFiches" class="gestions_dashboard">
@@ -23,6 +27,8 @@
 
 		<div id="gestionArticles" class="gestions_dashboard" >
 			<h4>Gestions des articles<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></h4>
+
+	
 			<ul>Les derniers articles:
 				@foreach ($posts as $post)
 				<li>
@@ -51,16 +57,5 @@
 				@endforeach
 			</ul>
 		</div>
-	</div>
-@endsection
-
-@section('sidebar')
-	<div class="col-sm-9 col-md-5 col-md-offset-7" id="sidebarRight">
-		<h4>Statistiques</h4>
-		<ul>
-			<li>43 commentaires</li>
-			<li>30 fiches publiées</li>
-			<li>150 élèves</li>
-		</ul>
 	</div>
 @endsection

@@ -1,0 +1,283 @@
+html, body {
+ 	margin:0;
+ 	padding:0;
+}
+body{
+	background: url(../images/bg.png);
+	background-repeat:repeat;
+	font-family: 'Oswald', sans-serif;
+	color:#58585a;
+}
+nav{
+	border-radius: none!important;
+}
+h1 h2 h3 h4{
+	font-weight: bold;
+	text-align: center;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none!important;
+	cursor: pointer;
+}
+input{
+	cursor: pointer;
+}
+p{
+	font-weight: normal;
+}
+.spacer{
+	clear: both;
+}
+.row a{
+	color:#58585a;
+}
+/************ Nav **********/
+.topnav{
+	border: none;
+	background-color: #424242;
+	position: relative;
+}
+.blocSocialTop{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+.blocSocialTop a{
+	float: left;
+	margin-left: 5px;
+	width: 30px;
+	height: 30px;
+	background-size: 100%
+}
+.logo{
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+.navbar-default .navbar-nav > li > a{
+	font-weight: bold;
+	text-transform: uppercase;
+	-webkit-transition: 400ms;
+  	transition: 400ms;
+}
+/************ content ****************/
+.container{
+	margin-bottom: 20px;
+}
+article{
+	margin-bottom: 5px;
+	padding-bottom: 20px;
+	background-color: #fff;
+	position: relative;
+}
+article h1, article h2, article h3, article p, article span{
+	padding-left: 7px;
+	padding-right: 7px;
+}
+article .authDate{
+	font-style: italic;
+	font-weight: lighter;
+	color:#2b2b2b;
+	font-size: 12px;
+}
+.articleAbstract{
+	padding: 0;
+}
+.infoArticle{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-left: 7px solid #ed382e;
+}
+img.col-md-4{
+	padding: 0;
+}
+.growBar{
+	background: url(../images/triangle.png) no-repeat;
+	height: 16px;
+	display: block;
+  	position: absolute;
+  	-webkit-transition: width 300ms; /* For Safari 3.1 to 6.0 */
+    transition: width 300ms;
+    width: 15px;
+    bottom: 0;
+	left: 0;
+}
+.growBar2{
+	background: url(../images/triangle2.png) no-repeat;
+	height: 16px;
+	display: block;
+  	position: absolute;
+  	-webkit-transition: height 300ms; /* For Safari 3.1 to 6.0 */
+    transition: height 300ms;
+    width: 15px;
+    top: 0;
+	right:-1px;
+}
+.row ul{
+	padding-left: 0px;
+	background-color: #fff;
+}
+#niktamer{
+	padding: 10px;
+}
+li{
+	height: 28px;
+	font-size: 16px;
+	position: relative;
+	font-weight: lighter;
+}
+li a{
+	text-decoration: none;
+}
+li a .miniGrowBar{
+	height: 2px;
+  	width: 2px;
+  	background-color: #ed382e;
+  	-webkit-transition: 300ms;
+  	transition: 300ms;
+ 	position: absolute;
+  	bottom: 0;
+  	left: 0;
+}
+.col-md-6{
+	padding-left: 0;
+}
+.btnFiche{
+	text-align: center;
+}
+.mention{
+	background-color:#fff;
+}
+.mention h2, .mention h3, .mention h4, .mention a{
+	color:#ed382e;;
+}
+.questionContent{
+	background-color: #fff;
+	text-align: center;
+	border-left: 6px solid #ed382e;
+	border-bottom: 6px solid #ed382e;
+}
+.questionContent form{
+	position: relative;
+	border-top: 1px lightgrey dotted;
+	padding-bottom: 20px;
+}
+.enoncer{
+	margin-top: 50px;
+	font-size: 25px;
+}
+input[type=radio]{
+	width: 3em;
+}
+#vrai, #faux{
+	margin-top: 20px;
+}
+#vrai{
+	text-align: left;
+	font-size: 20px;
+}
+#faux{
+	margin-right: 0;
+	font-size: 20px;
+	text-align: right;
+	margin-left: 30%;
+}
+#sub{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	width: 150px;
+	background-color: #ed382e;
+	color: #fff;
+	-webkit-transition: 400ms;
+  	transition: 400ms;
+}
+/************* Footer ****************/
+footer{
+	border-top: 5px solid #ed382e;
+	background-color: #424242;
+	width: 100%;
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 0;
+	position: relative;
+	bottom: 0;
+}
+footer a{
+	color: #fff;
+}
+footer p{
+	font-size: 15px;
+}
+.contactFooter{
+	float: right;
+	position: relative;
+}
+.blocSocialFooter{
+	position: absolute;
+	right: 40px;
+	top: 25px;
+}
+.blocSocialFooter a{
+	float: left;
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+	background-size: 100%
+}
+.blocSocialFooter img{
+	width: 60px;
+}
+.copy{
+	position: absolute;
+	right: 45px;
+	bottom: 10px;
+	font-size: 16px;
+}
+/*********** Transisition *********/
+.navbar-default .navbar-nav > li > a:hover {
+	background-color: #ed382e;
+	color:#FFF;
+}
+li:hover .miniGrowBar{
+	width: 100%;
+}
+article:hover .growBar{
+	width: 100%;
+	background-color: #ed382e;
+}
+article:hover .growBar2{
+	height: 100%;
+	background-color: #ed382e;
+}
+.fb{
+	background-image: url('../images/fb-grey.png');
+	-webkit-transition: 400ms;
+  	transition: 400ms;
+}
+.twitter{
+	background-image: url('../images/twitter-grey.png');
+	-webkit-transition: 400ms;
+  	transition: 400ms;	
+}
+.google{
+	background-image: url('../images/google-grey.png');
+	-webkit-transition: 400ms;
+  	transition: 400ms;	
+}
+.fb:hover{
+	background-image: url('../images/fb-color.png');
+}
+.twitter:hover{
+	background-image: url('../images/twitter-color.png');	
+}
+.google:hover{
+	background-image: url('../images/google-color.png');	
+}
+#sub:hover{
+	background-color: #5cb85c;
+}
